@@ -13,7 +13,7 @@ vinexplainnet/
     loader.py         pyhocon read + include resolution -> Treatment
   casting/          data: who appears on screen
     synthetic.py      SyntheticOCT layered-retina generator
-    sources.py        Kermany/Duke/OCTID manifest adapters, DATASET_SPECS
+    sources.py        Kermany/Duke manifest adapters, DATASET_SPECS
     degrade.py        ConsumerDegradation (blur/speckle/resolution/contrast)
     augment.py        ConsumerAugment (geometric/intensity/noise/OCT)
     reels.py          Reel dataset + make_loaders

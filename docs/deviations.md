@@ -4,8 +4,8 @@ Every entry links a paper section and gives a justification. The science is
 implemented exactly; these are environment/scope choices.
 
 ## D1 — Synthetic data stands in for the restricted real corpora
-- Paper: §IV-A (Kermany / Duke / OCTID).
-- The three datasets are public but large and registration/licensing varies. The
+- Paper: §IV-A (Kermany / Duke).
+- Both datasets are public but large and registration/licensing varies. The
   default data path is a deterministic synthetic layered-retina OCT generator
   (`casting/synthetic.py`) whose per-class lesion signatures are linearly
   recoverable, so classification and attention explanations are exercised end to

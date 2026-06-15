@@ -27,11 +27,6 @@ DATASET_SPECS: dict[str, DatasetSpec] = {
         ("AMD", "DME", "Normal"),
         "https://people.duke.edu/~sf59/RPEDC_Ophth_2013_dataset.htm",
     ),
-    "octid": DatasetSpec(
-        "octid",
-        ("Normal", "MH", "AMD", "CSR", "DR"),
-        "https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/DPPLA",
-    ),
 }
 
 

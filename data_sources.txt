@@ -14,25 +14,20 @@ Evaluation datasets (main results, Methods Section IV-A)
    Size    : 3,231 B-scans from 45 patients, 496x768, Spectralis SD-OCT, 5-fold cross-validation
    Access  : https://people.duke.edu/~sf59/RPEDC_Ophth_2013_dataset.htm
 
-3. OCTID dataset
-   Classes : Normal, MH, AMD, CSR, DR (5-class)
-   Size    : 572 images, 5-fold cross-validation
-   Access  : https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/DPPLA
-
 Stage-1 backbone pretraining corpora (Methods Section III-D-1)
 --------------------------------------------------------------
 
-4. ImageNet-1K
+3. ImageNet-1K
    Use     : backbone classification pretraining (100 epochs)
    Access  : https://www.image-net.org/
 
-5. CheXpert (reference [43])
+4. CheXpert (reference [43])
    Use     : medical-imaging fine-tuning of the backbone (50 epochs)
    Access  : https://stanfordmlgroup.github.io/competitions/chexpert/
 
 Notes
 -----
-- All five resources are publicly listed; registration / license terms apply per source.
+- All four resources are publicly listed; registration / license terms apply per source.
 - The repository ships a synthetic OCT path by default; to reproduce the manuscript
   figures, download the evaluation datasets above and point a treatment file's
   data.manifest at a manifest JSON (see scripts/prepare_data.sh).

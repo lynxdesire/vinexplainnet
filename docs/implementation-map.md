@@ -53,7 +53,7 @@ is traced here. Columns: paper location | item | file | symbol | notes.
 | paper | item | file | symbol | notes |
 | --- | --- | --- | --- | --- |
 | §IV-A | synthetic layered-retina OCT generator + per-class lesion signatures | `vinexplainnet/casting/synthetic.py` | `SyntheticOCT` | recoverable CNV/DME/Drusen signal |
-| §IV-A-1/2/3 | Kermany/Duke/OCTID manifest adapters + class maps | `vinexplainnet/casting/sources.py` | `ManifestSource`, `DATASET_SPECS` | real-data path |
+| §IV-A-1/2 | Kermany/Duke manifest adapters + class maps | `vinexplainnet/casting/sources.py` | `ManifestSource`, `DATASET_SPECS` | real-data path |
 | §IV-A-4 | simulated consumer degradation (blur, speckle, resolution, contrast) | `vinexplainnet/casting/degrade.py` | `ConsumerDegradation` | applied at evaluation |
 | §IV-A | batching, splits | `vinexplainnet/casting/reels.py` | `Reel`, `make_loaders` | plain numpy/torch loader |
 

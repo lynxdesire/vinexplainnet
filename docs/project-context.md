@@ -7,7 +7,7 @@
     framework          : PyTorch 2.x (plain torch.nn; hand-built        [HIGH]
                          depthwise-separable EfficientNet-B0 backbone)
     venue              : IEEE Transactions on Consumer Electronics      [HIGH]
-    primary_datasets   : 3 datasets (Kermany/UCSD, Duke, OCTID)         [HIGH]
+    primary_datasets   : 2 datasets (Kermany/UCSD, Duke)                [HIGH]
     compute_target     : 4x NVIDIA A100 80GB, FP16, ~36 h              [HIGH]
     hparams_reference  : Appendix A, Table XV                           [HIGH]
     supp_path          : none (Appendices A-E are in-body)
@@ -64,9 +64,8 @@ Source: Index Terms; reference formatting; §VI Discussion.
 | --- | --- | --- | --- | --- |
 | Kermany (UCSD) | train 83,484 / test 1,000 (250 per class) | CNV, DME, Drusen, Normal | 108,312 B-scans, 496×512, Spectralis | https://data.mendeley.com/datasets/rscbjbr9sj/3 (CC BY 4.0) |
 | Duke (Srinivasan) | 5-fold cross-validation | AMD, DME, Normal | 3,231 B-scans, 45 patients, 496×768, Spectralis SD-OCT | https://people.duke.edu/~sf59/RPEDC_Ophth_2013_dataset.htm |
-| OCTID | 5-fold cross-validation | Normal, MH, AMD, CSR, DR | 572 images | https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/DPPLA (CC BY 4.0) |
 
-All three are public. Real bytes are large and licensing/registration varies, so
+Both are public. Real bytes are large and licensing/registration varies, so
 the package ships a deterministic synthetic layered-retina OCT generator with
 per-class recoverable lesion signatures plus a manifest loader for the real
 path. Simulated consumer-imaging degradation (motion blur, 2–3× speckle,
@@ -129,7 +128,7 @@ bootstrap CI with 1000 iterations; McNemar with Bonferroni at α = 0.01.
 ## Headline numbers (for the reviewer-facing reproduction targets)
 
 - Kermany: ACC 98.47%, AUC 99.62%, 4.2M params.
-- Duke: ACC 97.63%. OCTID: ACC 94.27%.
+- Duke: ACC 97.63%.
 - Explanation: faithfulness 0.912, Gini sparsity 0.687, clinical alignment 4.23/5.
 - HAFM gain over backbone: +1.92% (96.20 → 98.12). ASS gain: +0.22% (+2.1% under high noise).
 - Edge (optimised): Jetson Nano 34 ms, Snapdragon 888 19 ms, 3.2 MB, 28 mJ.

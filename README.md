@@ -87,13 +87,13 @@ python -m vinexplainnet.studio optimize --treatment configs/experiment/main.conf
 python -m vinexplainnet.studio export   --treatment configs/experiment/main.conf
 ```
 
-Swap the treatment for `supplementary_duke.conf`, `supplementary_octid.conf`, or
-any `ablation_*.conf`. The two-step screening short cut is `make smoke`.
+Swap the treatment for `supplementary_duke.conf` or any `ablation_*.conf`. The
+two-step screening short cut is `make smoke`.
 
 ## Box office and reviews
 
-The numbers below are the manuscript's targets on the real Kermany / Duke /
-OCTID data. This release ships a synthetic OCT path by default (see Advisories),
+The numbers below are the manuscript's targets on the real Kermany / Duke
+data. This release ships a synthetic OCT path by default (see Advisories),
 so out of the box the commands run end to end but do not land on these figures;
 point a treatment's `data.manifest` at downloaded data to chase them.
 
@@ -101,7 +101,6 @@ point a treatment's `data.manifest` at downloaded data to chase them.
 | --- | --- | --- |
 | Classification (Kermany) | `evaluate --treatment configs/experiment/main.conf` | ACC 98.47%, AUC 0.9962 |
 | Classification (Duke) | `evaluate --treatment configs/experiment/supplementary_duke.conf` | ACC 97.63% |
-| Classification (OCTID) | `evaluate --treatment configs/experiment/supplementary_octid.conf` | ACC 94.27% |
 | Explanation quality | `explain --treatment configs/experiment/main.conf` | faithfulness 0.912, Gini 0.687, clinical 4.23/5 |
 | HAFM ablation | `evaluate --treatment configs/experiment/ablation_no_hafm.conf` | +1.92% from baseline to full |
 | Edge footprint | `optimize --treatment configs/experiment/main.conf` | 3.1M params, 3.2 MB, Jetson 34 ms |
@@ -124,7 +123,6 @@ point a treatment's `data.manifest` at downloaded data to chase them.
 | --- | --- | --- |
 | Kermany (UCSD) | CNV, DME, Drusen, Normal | https://data.mendeley.com/datasets/rscbjbr9sj/3 |
 | Duke | AMD, DME, Normal | https://people.duke.edu/~sf59/RPEDC_Ophth_2013_dataset.htm |
-| OCTID | Normal, MH, AMD, CSR, DR | https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/DPPLA |
 
 Drop a manifest JSON (`{"items": [{"path": "frame.npy", "label": 0}, ...]}`) and
 set `data.manifest` to use the real data; `scripts/prepare_data.sh` prints the
