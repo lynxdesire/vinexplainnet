@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vinexplainnet"
+version = "0.1.0"
+description = "Vascular-Immune-Neural explainable network for consumer OCT retinal analytics"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "argh>=0.31",
+    "pyhocon>=0.3.61",
+]
+
+[project.optional-dependencies]
+dev = ["ruff", "black", "isort", "mypy", "pytest"]
+export = ["onnx"]
+
+[project.scripts]
+vinexplainnet = "vinexplainnet.studio.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["vinexplainnet*"]
+
+[tool.setuptools.package-data]
+vinexplainnet = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["vinexplainnet"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["B008", "SIM108"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["vinexplainnet"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["vinexplainnet"]
+strict = true
+warn_return_any = false
+disallow_untyped_calls = false
+disallow_subclassing_any = false
+
+[[tool.mypy.overrides]]
+module = ["pyhocon.*", "argh.*", "scipy.*", "sklearn.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
